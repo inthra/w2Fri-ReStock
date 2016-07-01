@@ -7,13 +7,45 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.sportstats.MainActivity">
+    tools:context="com.epicodus.sportstats.MainActivity"
+    android:background="@drawable/home">
 
-    <ImageView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/homeImage"
-        android:src="@drawable/home"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/etUsername"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:hint="Username"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etPassword"
+        android:layout_below="@+id/etUsername"
+        android:layout_alignParentStart="true"
+        android:hint="Password"
+        android:layout_alignEnd="@+id/etUsername" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign IN"
+        android:id="@+id/bSignIn"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/etPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Register Here"
+        android:id="@+id/tvRegisterHere"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
