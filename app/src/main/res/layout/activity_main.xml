@@ -17,6 +17,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:hint="Username"
+        android:background="#85ffffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignParentEnd="true" />
 
     <EditText
@@ -28,6 +34,11 @@
         android:layout_below="@+id/etUsername"
         android:layout_alignParentStart="true"
         android:hint="Password"
+        android:background="#85ffffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_alignEnd="@+id/etUsername" />
 
     <Button
@@ -36,8 +47,8 @@
         android:text="Sign IN"
         android:id="@+id/bSignIn"
         android:layout_below="@+id/etPassword"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/etPassword" />
+        android:layout_alignStart="@+id/tvRegisterHere"
+        android:layout_alignEnd="@+id/tvRegisterHere" />
 
     <TextView
         android:layout_width="wrap_content"
