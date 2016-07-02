@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".TeamsActivity"></activity>
     </application>
 
 </manifest>
