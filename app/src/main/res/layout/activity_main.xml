@@ -59,7 +59,7 @@
         android:text="Register Here"
         android:id="@+id/tvRegisterHere"
         android:textColor="@android:color/white"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/bSignIn"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
