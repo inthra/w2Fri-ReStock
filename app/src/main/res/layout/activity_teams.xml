@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.sportstats.TeamsActivity"
-    android:background="@android:color/darker_gray">
+    android:background="@drawable/field">
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,14 +37,15 @@
         android:layout_marginTop="35dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="false"
-        android:background="@android:color/darker_gray"
-        android:layout_toStartOf="@+id/etUsername" />
+        android:layout_toStartOf="@+id/etUsername"
+        android:background="@color/colorBackgroundFormInput" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lvScores"
         android:layout_alignTop="@+id/lvTeams"
-        android:layout_toEndOf="@+id/lvTeams" />
+        android:layout_toEndOf="@+id/lvTeams"
+        android:background="@color/colorBackgroundFormInput" />
 
 </RelativeLayout>

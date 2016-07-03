@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, TeamsActivity.class);
             intent.putExtra("username", usernameInput);
             startActivity(intent);
+            mUsername.setText("");
+            mPassword.setText("");
         }
 
         if(v == mRegisterHere) {
