@@ -12,8 +12,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.etUserName) EditText mUserName;
-    @Bind(R.id.etPassWord) EditText mPassWord;
+    @Bind(R.id.etUsername) EditText mUsername;
+    @Bind(R.id.etPassword) EditText mPassword;
     @Bind(R.id.bSignIn) Button mSignInButton;
     @Bind(R.id.tvRegisterHere) TextView mRegisterHere;
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
         public void onClick(View v) {
         if(v == mSignInButton) {
-            String usernameInput = mUserName.getText().toString();
+            String usernameInput = mUsername.getText().toString();
             Intent intent = new Intent(MainActivity.this, TeamsActivity.class);
             intent.putExtra("username", usernameInput);
             startActivity(intent);

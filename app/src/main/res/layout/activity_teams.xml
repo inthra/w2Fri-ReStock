@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUsername"
+        android:id="@+id/etUsername"
         android:text="username"
         android:textSize="@dimen/abc_text_size_large_material"
         android:layout_alignParentTop="true"
@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="false"
         android:background="@android:color/darker_gray"
-        android:layout_toStartOf="@+id/tvUsername" />
+        android:layout_toStartOf="@+id/etUsername" />
 
     <ListView
         android:layout_width="wrap_content"
