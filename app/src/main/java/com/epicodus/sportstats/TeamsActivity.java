@@ -7,10 +7,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class TeamsActivity extends AppCompatActivity {
-    private ListView mListTeams;
-    private ListView mListScores;
-    private TextView mUsername;
+    @Bind(R.id.lvTeams) ListView mListTeams;
+    @Bind(R.id.lvScores) ListView mListScores;
+    @Bind(R.id.tvUsername) TextView mUsername;
+
     private String[] teams = new String[] {"Switzerland vs Poland", "Wales vs N.Ireland", "Croatia vs Portugal", "France vs Ireland", "Germany vs Slovakia", "Hungry vs Belgium", "Italy vs Spain", "England vs Iceland", "Poland vs Portugal", "Wales vs Belgium"};
     private String[] scores = new String[] {"1 - 1", "1 - 0", "0 - 1", "2 - 1", "3 - 0", "0 - 4", "2 - 0", "1 - 2", "1 - 1", "3 - 1"};
 
@@ -18,11 +22,12 @@ public class TeamsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
+        ButterKnife.bind(this);
 
-//        mUsername = (TextView) findViewById(R.id.etUsername);
-//        Intent intent = getIntent();
-//        String username = intent.getStringExtra("username");
-//        mUsername.setText("Here is the text: " + username);
+        mUsername = (TextView) findViewById(R.id.tvUsername);
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+        mUsername.setText("Here is the text: " + username);
 
         mListTeams = (ListView) findViewById(R.id.lvTeams);
         mListScores = (ListView) findViewById(R.id.lvScores);
