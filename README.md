@@ -1,18 +1,18 @@
-# Independent Project: SoccerStats
+# Independent Project: ReStock
 
-#### An app offers statistic data for Soccer, July 1, 2016
+#### An app offers service for restocking food truck in Portland area, July 8, 2016
 
 #### By _Inthrayuth Mahaphol_
 
 ## Description
 
-An app offers statistic data for Soccer. The app is plan to have 3 and more activities that the user can navigate to. Display a list of teams and scores. A user log-in input and pass it to another activity. Once user log-in, the user will be able to navigate to their selected team to see team's statistics.
+An app offers service for restocking food truck in Portland area. Currently, the app is plan to design for users who want to be an independent restocking client. Once users log-in, they can navigate list of wanted items of food truck owners.
 
-* Currently, this version is the basic user interface with hard-code information. The API and dynamic information will be added in the future version.
+* Currently, this version is the basic user interface with hard-code information. The API and dynamic information have been added in these version.
 
 ## Installation
 
-* Clone or download <https://github.com/inthra/w1Fri-SportStats.git> this repository
+* Clone or download <https://github.com/inthra/w2Fri-ReStock.git> this repository
 * Install Java JDK 6 or higher
 * Install Android Studio
 
@@ -31,6 +31,7 @@ Feel free to contact me with questions or suggestions and contribute to the code
 * Git
 * Github
 * Atom text editor
+* API
 
 ### License
 
