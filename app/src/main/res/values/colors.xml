@@ -3,10 +3,12 @@
     <color name="colorPrimary">#CDDC39</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorPrimaryLight">#F0F4C3</color>
-    <color name="colorAccent">#03A9F4</color>
+    <color name="colorAccent">#03a9f4</color>
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#727272</color>
     <color name="colorTextIcons">#212121</color>
     <color name="colorDivider">#B6B6B6</color>
     <color name="colorBackgroundFormInput">#85ffffff</color>
+    <color name="colorBackgroundButtonGreen">#83ffbd</color>
+    <color name="colorBackgroundButtonBlue">#62a4d1</color>
 </resources>

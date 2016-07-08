@@ -5,7 +5,18 @@
     android:layout_height="match_parent"
     tools:context="com.epicodus.restock.RegisterActivity">
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/image_background"
+        android:scaleType="centerCrop"
+        android:alpha="0.2"
+        android:background="@color/colorBackgroundButtonGreen" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,6 +82,7 @@
         android:id="@+id/bRegister"
         android:layout_below="@+id/etPassWord"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/abc_text_size_small_material" />
+        android:textSize="@dimen/abc_text_size_small_material"
+        android:background="@color/colorBackgroundButtonGreen" />
 
 </RelativeLayout>
