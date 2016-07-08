@@ -21,7 +21,7 @@ public class DeliveryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teams);
+        setContentView(R.layout.activity_delivery);
         ButterKnife.bind(this);
 
         mUsername = (TextView) findViewById(R.id.etUsername);
