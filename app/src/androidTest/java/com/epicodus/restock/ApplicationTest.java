@@ -1,4 +1,4 @@
-package com.epicodus.sportstats;
+package com.epicodus.restock;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

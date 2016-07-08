@@ -1,4 +1,4 @@
-package com.epicodus.sportstats;
+package com.epicodus.restock;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TeamsActivity extends AppCompatActivity {
+public class DeliveryActivity extends AppCompatActivity {
     @Bind(R.id.lvTeams) ListView mListTeams;
     @Bind(R.id.lvScores) ListView mListScores;
     @Bind(R.id.etUsername) TextView mUsername;

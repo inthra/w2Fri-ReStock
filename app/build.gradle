@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.epicodus.sportstats"
+        applicationId "com.epicodus.restock"
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
