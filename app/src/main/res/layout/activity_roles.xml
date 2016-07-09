@@ -9,14 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.restock.RolesActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUsername"
-        android:text="username"
-        android:textSize="@dimen/abc_text_size_large_material"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/imageView3"
+        android:src="@drawable/image_street"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.5" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +25,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Username: "
         android:id="@+id/textView"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUsername"
+        android:text="username"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -35,8 +46,8 @@
         android:layout_marginBottom="20dp"
         android:background="@color/accent_material_dark"
         android:layout_above="@+id/bFoodtruck"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/imageView3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +56,8 @@
         android:id="@+id/bFoodtruck"
         android:layout_marginBottom="20dp"
         android:background="@color/accent_material_light"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/imageView3"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/bRestock" />
+        android:layout_alignEnd="@+id/imageView3" />
+
 </RelativeLayout>
