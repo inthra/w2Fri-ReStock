@@ -1,9 +1,11 @@
-package com.epicodus.restock;
+package com.epicodus.restock.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.epicodus.restock.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

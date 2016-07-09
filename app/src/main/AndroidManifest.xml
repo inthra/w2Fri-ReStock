@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,18 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".ui.RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.restock.MainActivity"></meta-data>
+                android:value="com.epicodus.restock.ui.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".RolesActivity">
+        <activity android:name=".ui.RolesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.restock.MainActivity"></meta-data>
+                android:value="com.epicodus.restock.ui.MainActivity"></meta-data>
         </activity>
         <activity
-            android:name=".DeliveryActivity"
+            android:name=".ui.DeliveryActivity"
             android:theme="@style/NoActionBarTheme">
         </activity>
     </application>

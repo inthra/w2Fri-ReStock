@@ -1,4 +1,4 @@
-package com.epicodus.restock;
+package com.epicodus.restock.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.epicodus.restock.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

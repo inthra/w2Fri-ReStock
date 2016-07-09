@@ -1,4 +1,4 @@
-package com.epicodus.restock;
+package com.epicodus.restock.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.epicodus.restock.R;
 
 import static android.app.ProgressDialog.show;
 
