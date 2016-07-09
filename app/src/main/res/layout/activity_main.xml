@@ -9,25 +9,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:layout_alignTop="@+id/tvHeader"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/image_main"
         android:alpha="0.4"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvHeader"
         android:text="ReStock"
-        android:paddingTop="30dp"
+        android:layout_marginTop="30dp"
         android:textSize="50sp"
         android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorPrimaryText"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@color/colorPrimaryText" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"

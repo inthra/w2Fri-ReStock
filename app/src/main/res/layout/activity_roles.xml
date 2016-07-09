@@ -22,11 +22,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tvHeader"
+        android:text="ReStock"
+        android:layout_marginTop="30dp"
+        android:textSize="50sp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@color/colorPrimaryText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Username: "
         android:id="@+id/textView"
         android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvHeader"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -54,7 +66,7 @@
         android:layout_height="wrap_content"
         android:text="Food Truck Owner"
         android:id="@+id/bFoodtruck"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:background="@color/accent_material_light"
         android:layout_alignBottom="@+id/imageView3"
         android:layout_alignParentStart="true"
