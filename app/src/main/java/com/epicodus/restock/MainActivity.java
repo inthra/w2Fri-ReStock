@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onClick(View v) {
         if(v == mSignInButton) {
             String usernameInput = mUsername.getText().toString();
-            Intent intent = new Intent(MainActivity.this, DeliveryActivity.class);
+            Intent intent = new Intent(MainActivity.this, RolesActivity.class);
             intent.putExtra("username", usernameInput);
             startActivity(intent);
             mUsername.setText("");
