@@ -22,12 +22,12 @@
         <activity android:name=".ui.RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.restock.ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity android:name=".ui.RolesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.restock.ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity
             android:name=".ui.DeliveryActivity"

@@ -34,9 +34,9 @@ public class DeliveryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_delivery);
         ButterKnife.bind(this);
 
-        String location = "97201";
+        String location = "portland";
 
-//        getFoodcarts(location);
+        getFoodcarts(location);
     }
 
     private void getFoodcarts(String location) {
