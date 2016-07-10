@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username: "
+        android:text="Welcome"
         android:id="@+id/textView"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/tvHeader"
@@ -48,6 +48,16 @@
         android:text="username"
         android:textSize="@dimen/abc_text_size_large_material"
         android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please select the following sections"
+        android:id="@+id/textView2"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/bRestock"
         android:layout_centerHorizontal="true" />
 
     <Button

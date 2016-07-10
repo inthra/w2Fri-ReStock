@@ -1,7 +1,10 @@
 package com.epicodus.restock.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
+@Parcel
 public class Foodcart {
     private String mName;
     private String mPhone;
@@ -9,6 +12,8 @@ public class Foodcart {
     private ArrayList<String> mAddress = new ArrayList<>();
     private double mLatitude;
     private double mLongitude;
+
+    public Foodcart() {}
 
     public Foodcart(String name, String phone, String website, ArrayList<String> address, double latitude, double longitude) {
         this.mName = name;

@@ -38,7 +38,7 @@ public class RolesActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v == mRestockButton) {
-            Intent intent = new Intent(RolesActivity.this, DeliveryActivity.class);
+            Intent intent = new Intent(RolesActivity.this, DeliveryListActivity.class);
             startActivity(intent);
         }
     }
