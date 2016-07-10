@@ -3,12 +3,15 @@ package com.epicodus.restock.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.epicodus.restock.R;
+import com.epicodus.restock.adapters.WantedListAdapter;
 import com.epicodus.restock.models.Foodcart;
 import com.epicodus.restock.services.YelpService;
 
@@ -24,7 +27,8 @@ import okhttp3.Response;
 public class DeliveryActivity extends AppCompatActivity {
     public static final String TAG = DeliveryActivity.class.getSimpleName();
 
-    @Bind(R.id.listView) ListView mListView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private WantedListAdapter mAdapter;
 
     public ArrayList<Foodcart> mFoodcarts = new ArrayList<>();
 
@@ -55,22 +59,11 @@ public class DeliveryActivity extends AppCompatActivity {
                 DeliveryActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        String[] restaurantNames = new String[mFoodcarts.size()];
-                        for (int i = 0; i < restaurantNames.length; i++) {
-                            restaurantNames[i] = mFoodcarts.get(i).getName();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(DeliveryActivity.this,
-                                android.R.layout.simple_list_item_1, restaurantNames);
-                        mListView.setAdapter(adapter);
-
-                        for (Foodcart foodcart : mFoodcarts) {
-                            Log.d(TAG, "Name: " + foodcart.getName());
-                            Log.d(TAG, "Phone: " + foodcart.getPhone());
-                            Log.d(TAG, "Website: " + foodcart.getWebsite());
-                            Log.d(TAG, "Address: " + android.text.TextUtils.join(", ", foodcart.getAddress()));
-                        }
+                        mAdapter = new WantedListAdapter(getApplicationContext(), mFoodcarts);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DeliveryActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
                     }
                 });
             }
