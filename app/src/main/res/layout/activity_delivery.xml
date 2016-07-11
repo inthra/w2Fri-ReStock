@@ -9,32 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ui.DeliveryListActivity">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Things We Want"-->
-        <!--android:id="@+id/tvWanted"-->
-        <!--android:textSize="@dimen/abc_text_size_headline_material"-->
-        <!--android:textStyle="bold"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentStart="true" />-->
-
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Food Trucks/Carts in Portland"-->
-        <!--android:id="@+id/tvLocation"-->
-        <!--android:layout_below="@+id/tvWanted"-->
-        <!--android:layout_alignParentStart="true" />-->
-
-    <!--<ListView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/listView"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_below="@+id/tvLocation"-->
-        <!--android:layout_alignParentStart="true" />-->
-
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

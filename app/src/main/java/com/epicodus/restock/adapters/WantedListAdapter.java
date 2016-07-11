@@ -2,10 +2,13 @@ package com.epicodus.restock.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.restock.R;
@@ -15,6 +18,7 @@ import com.epicodus.restock.ui.DeliveryDetailActivity;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -48,6 +52,7 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
 
     public class WantedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.nameTextView) TextView mNameTextView;
+        @Bind(R.id.itemImageView) ImageView mItemImageView;
 
         private Context mContext;
 
@@ -60,6 +65,11 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
 
         public void bindFoodcart(Foodcart foodcart) {
             mNameTextView.setText(foodcart.getName());
+            TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
+            Random rand = new Random();
+            int rndInt = rand.nextInt(imgs.length());
+            int resID = imgs.getResourceId(rndInt, 0);
+            mItemImageView.setImageResource(resID);
         }
 
         @Override
@@ -70,5 +80,7 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
             intent.putExtra("foodcarts", Parcels.wrap(mFoodcarts));
             mContext.startActivity(intent);
         }
+
+
     }
 }

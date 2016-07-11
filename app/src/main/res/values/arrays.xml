@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="random_images_array">
+        <item>@drawable/photo1</item>
+        <item>@drawable/photo2</item>
+        <item>@drawable/photo3</item>
+        <item>@drawable/photo4</item>
+        <item>@drawable/photo5</item>
+        <item>@drawable/photo6</item>
+        <item>@drawable/photo7</item>
+        <item>@drawable/photo8</item>
+        <item>@drawable/photo9</item>
+        <item>@drawable/photo10</item>
+        <item>@drawable/photo11</item>
+        <item>@drawable/photo12</item>
+        <item>@drawable/photo13</item>
+        <item>@drawable/photo14</item>
+        <item>@drawable/photo15</item>
+        <item>@drawable/photo16</item>
+        <item>@drawable/photo17</item>
+        <item>@drawable/photo18</item>
+        <item>@drawable/photo19</item>
+        <item>@drawable/photo20</item>
+        <item>@drawable/photo21</item>
+        <item>@drawable/photo22</item>
+        <item>@drawable/photo23</item>
+        <item>@drawable/photo24</item>
+    </array>
+</resources>

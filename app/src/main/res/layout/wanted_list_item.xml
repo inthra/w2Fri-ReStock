@@ -7,7 +7,6 @@
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:id="@+id/itemImageView"
-        android:src="@drawable/image_main"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
