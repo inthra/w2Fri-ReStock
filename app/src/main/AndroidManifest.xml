@@ -31,8 +31,9 @@
         </activity>
         <activity
             android:name=".ui.DeliveryListActivity"
-            android:theme="@style/NoActionBarTheme"></activity>
-        <activity android:name=".ui.DeliveryDetailActivity"></activity>
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".ui.DeliveryDetailActivity" />
+        <activity android:name=".ui.BusinessOwnerActivity"></activity>
     </application>
 
 </manifest>

@@ -54,8 +54,6 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
         @Bind(R.id.nameTextView) TextView mNameTextView;
         @Bind(R.id.itemImageView) ImageView mItemImageView;
 
-        private Context mContext;
-
         public WantedViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

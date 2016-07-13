@@ -15,8 +15,10 @@ import butterknife.ButterKnife;
 
 public class RolesActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.tvUsername) TextView mUsername;
-    @Bind(R.id.bRestock) Button mRestockButton;
     @Bind(R.id.tvHeader) TextView mAppNameHeader;
+    @Bind(R.id.bRestock) Button mRestockButton;
+    @Bind(R.id.bFoodtruck) Button mFoodtruckButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +35,17 @@ public class RolesActivity extends AppCompatActivity implements View.OnClickList
         mUsername.setText(username);
 
         mRestockButton.setOnClickListener(this);
+        mFoodtruckButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v == mRestockButton) {
             Intent intent = new Intent(RolesActivity.this, DeliveryListActivity.class);
+            startActivity(intent);
+        }
+        if(v == mFoodtruckButton) {
+            Intent intent = new Intent(RolesActivity.this, BusinessOwnerActivity.class);
             startActivity(intent);
         }
     }
