@@ -1,6 +1,7 @@
 package com.epicodus.restock.ui;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.restock.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,11 +25,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.etFirstname) EditText mFirstname;
     @Bind(R.id.etLastname) EditText mLastname;
     @Bind(R.id.etEmail) EditText mEmail;
-    @Bind(R.id.etUsername) EditText mUsername;
+    @Bind(R.id.etUsername) EditText mUsernameEditText;
     @Bind(R.id.etPassword) EditText mPassword;
     @Bind(R.id.etConfirmPassword) EditText mConfirmPassword;
     @Bind(R.id.bRegister) Button mRegisterButton;
     @Bind(R.id.loginTextView) TextView mLoginTextView;
+
+    private FirebaseAuth mAuth;
+    private String mUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
 
         mLoginTextView.setOnClickListener(this);
         mRegisterButton.setOnClickListener(this);
@@ -46,7 +56,28 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             finish();
         }
         if (view == mRegisterButton) {
+            createNewAccount();
             Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void createNewAccount() {
+        final String fullname = mFirstname.getText().toString().trim();
+        final String lastname = mLastname.getText().toString().trim();
+        final String email = mEmail.getText().toString().trim();
+        mUsername = mUsernameEditText.getText().toString().trim();
+        String password = mPassword.getText().toString().trim();
+        String confirmPassword = mConfirmPassword.getText().toString().trim();
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
