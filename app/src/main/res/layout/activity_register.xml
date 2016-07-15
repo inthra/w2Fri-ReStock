@@ -15,74 +15,104 @@
         android:layout_alignParentEnd="true"
         android:src="@drawable/image_background"
         android:scaleType="centerCrop"
-        android:alpha="0.2"
-        android:background="@color/colorBackgroundButtonGreen" />
+        android:alpha="0.2" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etFirstName"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:id="@+id/scrollViewLayout"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:hint="First Name" />
+        android:layout_alignParentStart="true">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etLastName"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_below="@+id/etFirstName"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Last Name" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:id="@+id/etEmail"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@+id/etLastName"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/etLastName"
-        android:hint="Email" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etFirstName"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentTop="true"
+                android:hint="First Name" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUserName"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_below="@+id/etEmail"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:hint="Username" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etLastName"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/etFirstName"
+                android:hint="Last Name" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:id="@+id/etPassWord"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@+id/etUserName"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/etEmail"
-        android:hint="Password" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:id="@+id/etEmail"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/etLastName"
+                android:hint="Email" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="10dp"
-        android:id="@+id/bRegister"
-        android:layout_below="@+id/etPassWord"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/abc_text_size_small_material"
-        android:background="@color/colorBackgroundButtonGreen" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etUserName"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/etEmail"
+                android:hint="Username" />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/etPassWord"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/etUserName"
+                android:hint="Password" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/etConfirmPassWord"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/etPassWord"
+                android:hint="Confirm Password" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:layout_marginTop="5dp"
+                android:id="@+id/bRegister"
+                android:layout_below="@+id/etConfirmPassWord"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:background="@color/colorBackgroundButtonGreen"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextIcons"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:text="Already have an account? Log in here!"
+                android:id="@+id/loginTextView"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/bRegister"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

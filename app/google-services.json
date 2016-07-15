@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "858946818925",
+    "firebase_url": "https://restock-7625e.firebaseio.com",
+    "project_id": "restock-7625e",
+    "storage_bucket": "restock-7625e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858946818925:android:2ce0f87052e4f862",
+        "android_client_info": {
+          "package_name": "com.epicodus.restock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858946818925-tpj9hcevnd6e7tsnhm1r2hug0jpo16ng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.restock",
+            "certificate_hash": "9D8F3B6976E68144D2C2B11D310A9CCDD5991ACA"
+          }
+        },
+        {
+          "client_id": "858946818925-s7cg6kk7vb4kqcvccdv63c9aqkfiblia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAb1S4_BFDSXT6pDBKdESp6-k9Y6hbx34"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858946818925-s7cg6kk7vb4kqcvccdv63c9aqkfiblia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
