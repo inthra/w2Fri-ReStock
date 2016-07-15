@@ -34,7 +34,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etFirstName"
+                android:id="@+id/etFirstname"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
@@ -44,10 +44,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etLastName"
+                android:id="@+id/etLastname"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_below="@+id/etFirstName"
+                android:layout_below="@+id/etFirstname"
                 android:hint="Last Name" />
 
             <EditText
@@ -57,13 +57,13 @@
                 android:id="@+id/etEmail"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_below="@+id/etLastName"
+                android:layout_below="@+id/etLastname"
                 android:hint="Email" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etUserName"
+                android:id="@+id/etUsername"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_below="@+id/etEmail"
@@ -73,20 +73,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id="@+id/etPassWord"
+                android:id="@+id/etPassword"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_below="@+id/etUserName"
+                android:layout_below="@+id/etUsername"
                 android:hint="Password" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id="@+id/etConfirmPassWord"
+                android:id="@+id/etConfirmPassword"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_below="@+id/etPassWord"
+                android:layout_below="@+id/etPassword"
                 android:hint="Confirm Password" />
 
             <Button
@@ -95,7 +95,7 @@
                 android:text="Register"
                 android:layout_marginTop="5dp"
                 android:id="@+id/bRegister"
-                android:layout_below="@+id/etConfirmPassWord"
+                android:layout_below="@+id/etConfirmPassword"
                 android:layout_centerHorizontal="true"
                 android:textSize="@dimen/abc_text_size_small_material"
                 android:background="@color/colorBackgroundButtonGreen"
@@ -108,6 +108,7 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Already have an account? Log in here!"
                 android:id="@+id/loginTextView"
                 android:layout_gravity="center_horizontal"

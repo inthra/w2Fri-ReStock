@@ -41,13 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, RolesActivity.class);
             intent.putExtra("username", usernameInput);
             startActivity(intent);
-            mUsername.setText("");
-            mPassword.setText("");
         }
 
         if(v == mRegisterHere) {
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
