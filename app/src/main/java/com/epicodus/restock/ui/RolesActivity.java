@@ -2,6 +2,7 @@ package com.epicodus.restock.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,16 +14,18 @@ import android.widget.TextView;
 
 import com.epicodus.restock.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class RolesActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.tvUsername) TextView mUsername;
     @Bind(R.id.tvHeader) TextView mAppNameHeader;
     @Bind(R.id.bRestock) Button mRestockButton;
     @Bind(R.id.bFoodtruck) Button mFoodtruckButton;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +36,36 @@ public class RolesActivity extends AppCompatActivity implements View.OnClickList
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
         mAppNameHeader.setTypeface(pacificoFont);
 
-        mUsername = (TextView) findViewById(R.id.tvUsername);
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        mUsername.setText(username);
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                // these part will display welcome message with username
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName());
+                } else {
+
+                }
+            }
+        };
 
         mRestockButton.setOnClickListener(this);
         mFoodtruckButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
     @Override
