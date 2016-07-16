@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context="com.epicodus.restock.ui.RolesActivity">
 
     <ImageView
@@ -16,48 +15,43 @@
         android:layout_alignParentBottom="true"
         android:alpha="0.5" />
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvHeader"
-        android:text="ReStock"
-        android:layout_marginTop="30dp"
-        android:textSize="70sp"
-        android:textColor="@color/colorPrimaryText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@color/colorPrimaryText" />
+        android:gravity="center"
+        android:layout_centerInParent="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHeader"
+            android:text="ReStock"
+            android:textSize="70sp"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/colorPrimaryText"
+            android:textColorHint="@color/colorPrimaryText" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Please select the following sections"
-        android:id="@+id/textView2"
-        android:layout_marginBottom="15dp"
-        android:layout_above="@+id/bRestock"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Please select the following sections"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="15dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Restocking Client"
-        android:id="@+id/bRestock"
-        android:layout_marginBottom="20dp"
-        android:background="@color/accent_material_dark"
-        android:layout_above="@+id/bFoodtruck"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/imageView3" />
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Restocking Supplier"
+            android:id="@+id/bRestock"
+            android:background="@color/accent_material_dark" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Food Truck Owner"
-        android:id="@+id/bFoodtruck"
-        android:layout_marginBottom="30dp"
-        android:background="@color/accent_material_light"
-        android:layout_alignBottom="@+id/imageView3"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/imageView3" />
-
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Food Truck Owner"
+            android:id="@+id/bFoodtruck"
+            android:layout_marginBottom="40dp"
+            android:background="@color/accent_material_light" />
+    </LinearLayout>
 </RelativeLayout>

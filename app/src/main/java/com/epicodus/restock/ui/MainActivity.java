@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.etEmail) EditText mEmail;
     @Bind(R.id.etPassword) EditText mPassword;
     @Bind(R.id.bSignIn) Button mSignInButton;
-    @Bind(R.id.tvRegisterHere) TextView mRegisterHere;
+    @Bind(R.id.bRegisterHere) Button mRegisterHere;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;

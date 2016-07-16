@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.epicodus.restock.ui.MainActivity">
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,7 +31,6 @@
         android:padding="20dp"
         android:id="@+id/linearLayout"
         android:layout_centerVertical="true">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +49,7 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/etEmail"
-            android:hint="email"
+            android:hint="Log in with your email"
             android:padding="10dp"
             android:layout_marginBottom="5dp"
             android:background="@android:color/background_light" />
@@ -67,24 +65,27 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/background_light" />
 
-        <Button
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign IN"
-            android:id="@+id/bSignIn"
-            android:textSize="@dimen/abc_text_size_small_material"
-            android:background="@color/colorBackgroundButtonBlue"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp" />
+            android:layout_gravity="center_horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:id="@+id/bSignIn"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:backgroundTint="@color/colorBackgroundButtonBlue" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorTextIcons"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="Register New Account Here"
-            android:id="@+id/tvRegisterHere"
-            android:layout_gravity="center_horizontal" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="14sp"
+                android:text="Create An Account"
+                android:id="@+id/bRegisterHere"
+                android:backgroundTint="@color/colorBackgroundButtonGreen" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

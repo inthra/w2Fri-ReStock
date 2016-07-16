@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.etPassword) EditText mPasswordEditText;
     @Bind(R.id.etConfirmPassword) EditText mConfirmPasswordEditText;
     @Bind(R.id.bRegister) Button mRegisterButton;
-    @Bind(R.id.loginTextView) TextView mLoginTextView;
+    @Bind(R.id.loginButton) Button mLoginTextView;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
         if (view == mRegisterButton) {
             createNewAccount();
-            Toast.makeText(RegisterActivity.this, "Registering account...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, "Processing new account...", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -141,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private boolean isValidFirstname(String firstname) {
         if (firstname.equals("")) {
-            mFirstnameEditText.setError("Please enter your firstname");
+            mFirstnameEditText.setError("You can't leave this empty.");
             return false;
         }
         return true;
@@ -149,7 +149,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private boolean isValidLastname(String lastname) {
         if (lastname.equals("")) {
-            mLastnameEditText.setError("Please enter your lastname");
+            mLastnameEditText.setError("You can't leave this empty.");
             return false;
         }
         return true;
@@ -177,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             mPasswordEditText.setError("Please create a password containing at least 6 characters");
             return false;
         } else if (!password.equals(confirmPassword)) {
-            mPasswordEditText.setError("Passwords do not match");
+            mPasswordEditText.setError("Your passwords do not match");
             return false;
         }
         return true;
