@@ -15,16 +15,18 @@
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.RegisterActivity"></activity>
-        <activity android:name=".ui.RolesActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.RolesActivity" />
         <activity
             android:name=".ui.DeliveryListActivity"
             android:theme="@style/NoActionBarTheme" />
         <activity android:name=".ui.DeliveryDetailActivity" />
-        <activity android:name=".ui.BusinessOwnerActivity"></activity>
+        <activity android:name=".ui.ItemListActivity" />
+        <activity android:name=".ui.OwnerActivity"></activity>
     </application>
 
 </manifest>

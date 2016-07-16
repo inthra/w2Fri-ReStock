@@ -100,7 +100,7 @@ public class RolesActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
         if(v == mFoodtruckButton) {
-            Intent intent = new Intent(RolesActivity.this, BusinessOwnerActivity.class);
+            Intent intent = new Intent(RolesActivity.this, OwnerActivity.class);
             startActivity(intent);
         }
     }

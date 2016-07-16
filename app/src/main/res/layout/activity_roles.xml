@@ -44,7 +44,8 @@
             android:layout_height="wrap_content"
             android:text="Restocking Supplier"
             android:id="@+id/bRestock"
-            android:background="@color/accent_material_dark" />
+            android:background="@color/accent_material_dark"
+            android:textColor="@android:color/white" />
 
         <Button
             android:layout_width="280dp"
@@ -52,6 +53,7 @@
             android:text="Food Truck Owner"
             android:id="@+id/bFoodtruck"
             android:layout_marginBottom="40dp"
-            android:background="@color/accent_material_light" />
+            android:background="@color/accent_material_light"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </RelativeLayout>
