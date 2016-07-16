@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextIcons"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:text="Click here to Log In"
                     android:id="@+id/loginTextView" />
             </LinearLayout>
