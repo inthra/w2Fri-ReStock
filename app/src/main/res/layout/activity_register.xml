@@ -29,15 +29,15 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:id="@+id/linearLayout">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etFirstname"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentTop="true"
                 android:hint="First Name" />
 
@@ -45,8 +45,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etLastname"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_below="@+id/etFirstname"
                 android:hint="Last Name" />
 
@@ -55,8 +53,6 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:id="@+id/etEmail"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_below="@+id/etLastname"
                 android:hint="Email" />
 
@@ -64,8 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etUsername"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_below="@+id/etEmail"
                 android:hint="Username" />
 
@@ -74,8 +68,6 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:id="@+id/etPassword"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_below="@+id/etUsername"
                 android:hint="Password" />
 
@@ -84,36 +76,42 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:id="@+id/etConfirmPassword"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_below="@+id/etPassword"
                 android:hint="Confirm Password" />
 
-            <Button
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Register"
-                android:layout_marginTop="5dp"
-                android:id="@+id/bRegister"
-                android:layout_below="@+id/etConfirmPassword"
-                android:layout_centerHorizontal="true"
-                android:textSize="@dimen/abc_text_size_small_material"
-                android:background="@color/colorBackgroundButtonGreen"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorTextIcons"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="Already have an account? Log in here!"
-                android:id="@+id/loginTextView"
-                android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/bRegister"
-                android:layout_centerHorizontal="true" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:id="@+id/bRegister"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:background="@color/colorBackgroundButtonGreen" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="or"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Click here to Log In"
+                    android:id="@+id/loginTextView" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

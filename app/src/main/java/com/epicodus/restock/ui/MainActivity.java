@@ -10,16 +10,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.epicodus.restock.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(R.id.tvHeader) TextView mAppNameHeader;
     @Bind(R.id.etUsername) EditText mUsername;
     @Bind(R.id.etPassword) EditText mPassword;
     @Bind(R.id.bSignIn) Button mSignInButton;
     @Bind(R.id.tvRegisterHere) TextView mRegisterHere;
-    @Bind(R.id.tvHeader) TextView mAppNameHeader;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/pacifico.ttf");
         mAppNameHeader.setTypeface(pacificoFont);
 
+        mAuth = FirebaseAuth.getInstance();
+
         mSignInButton.setOnClickListener(this);
         mRegisterHere.setOnClickListener(this);
     }
@@ -37,9 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
         public void onClick(View v) {
         if(v == mSignInButton) {
-            String usernameInput = mUsername.getText().toString();
-            Intent intent = new Intent(MainActivity.this, RolesActivity.class);
-            startActivity(intent);
+            loginWithPassword();
         }
 
         if(v == mRegisterHere) {
@@ -47,5 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             finish();
         }
+    }
+
+    private void loginWithPassword() {
+        String usernameInput = mUsername.getText().toString();
+        Intent intent = new Intent(MainActivity.this, RolesActivity.class);
+        startActivity(intent);
     }
 }

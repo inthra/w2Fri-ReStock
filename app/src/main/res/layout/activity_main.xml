@@ -9,9 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:src="@drawable/image_main"
         android:alpha="0.4"
         android:scaleType="centerCrop"
@@ -22,78 +19,72 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvHeader"
         android:text="ReStock"
-        android:layout_marginTop="30dp"
         android:textSize="50sp"
         android:textColor="@color/colorPrimaryText"
         android:textColorHint="@color/colorPrimaryText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Portland Food Truck Restocking Service"
-        android:id="@+id/textView"
-        android:layout_marginBottom="15dp"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="@dimen/abc_text_size_medium_material"
-        android:layout_above="@+id/etUsername"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUsername"
-        android:hint="Username"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:background="@android:color/background_light" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/etPassword"
-        android:hint="Password"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@+id/etUsername"
-        android:layout_alignEnd="@+id/etUsername"
-        android:layout_alignStart="@+id/etUsername"
-        android:background="@android:color/background_light" />
-
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign IN"
-        android:id="@+id/bSignIn"
-        android:textSize="@dimen/abc_text_size_small_material"
-        android:layout_below="@+id/etPassword"
-        android:background="@color/colorBackgroundButtonBlue"
-        android:layout_alignStart="@+id/etUsername"
-        android:layout_alignEnd="@+id/etUsername" />
+        android:padding="20dp"
+        android:id="@+id/linearLayout"
+        android:layout_centerVertical="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:text="Register Here"
-        android:id="@+id/tvRegisterHere"
-        android:paddingBottom="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Portland Food Truck Restocking Service"
+            android:id="@+id/textView"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:layout_gravity="center_horizontal" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etUsername"
+            android:hint="email"
+            android:padding="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/background_light" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/etPassword"
+            android:hint="Password"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/background_light" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign IN"
+            android:id="@+id/bSignIn"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:background="@color/colorBackgroundButtonBlue"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextIcons"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Register New Account Here"
+            android:id="@+id/tvRegisterHere"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
 </RelativeLayout>
