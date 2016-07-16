@@ -1,7 +1,7 @@
 package com.epicodus.restock.services;
 
 import com.epicodus.restock.Constants;
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.models.Foodtruck;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,8 +39,8 @@ public class YelpService {
         call.enqueue(callback);
     }
 
-    public ArrayList<Foodcart> processResults(Response response) {
-        ArrayList<Foodcart> foodcarts = new ArrayList<>();
+    public ArrayList<Foodtruck> processResults(Response response) {
+        ArrayList<Foodtruck> foodcarts = new ArrayList<>();
 
         try {
             String jsonData = response.body().string();
@@ -65,7 +65,7 @@ public class YelpService {
                         address.add(addressJSON.get(y).toString());
                     }
 
-                    Foodcart restaurant = new Foodcart(name, phone, website, address, latitude, longitude);
+                    Foodtruck restaurant = new Foodtruck(name, phone, website, address, latitude, longitude);
                     foodcarts.add(restaurant);
                 }
             }

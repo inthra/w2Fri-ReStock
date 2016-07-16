@@ -2,7 +2,6 @@ package com.epicodus.restock.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.restock.R;
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.models.Foodtruck;
 import com.epicodus.restock.ui.DeliveryDetailActivity;
 
 import org.parceler.Parcels;
@@ -24,10 +23,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.WantedViewHolder> {
-    private ArrayList<Foodcart> mFoodcarts = new ArrayList<>();
+    private ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
     private Context mContext;
 
-    public WantedListAdapter(Context context, ArrayList<Foodcart> foodcarts) {
+    public WantedListAdapter(Context context, ArrayList<Foodtruck> foodcarts) {
         mContext = context;
         mFoodcarts = foodcarts;
     }
@@ -61,7 +60,7 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
             itemView.setOnClickListener(this);
         }
 
-        public void bindFoodcart(Foodcart foodcart) {
+        public void bindFoodcart(Foodtruck foodcart) {
             mNameTextView.setText(foodcart.getName());
             TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
             Random rand = new Random();

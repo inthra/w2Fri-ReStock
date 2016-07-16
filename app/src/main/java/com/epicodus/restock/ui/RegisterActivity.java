@@ -12,12 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.restock.R;
+import com.epicodus.restock.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -110,11 +113,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
                 mAuthProgressDialog.dismiss();
-
                 if (task.isSuccessful()) {
                     createFirebaseUserProfile(task.getResult().getUser());
+                    saveUser();
                 } else {
                     Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                 }
@@ -191,5 +193,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }
             }
         });
+    }
+
+    private void saveUser() {
+        String firstname = mFirstnameEditText.getText().toString().trim();
+        String lastname = mLastnameEditText.getText().toString().trim();
+        username = mUsernameEditText.getText().toString().trim();
+        String email = mEmailEditText.getText().toString().trim();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
+        User newUser = new User(firstname, lastname, username, email);
+
+        userRef.setValue(newUser);
     }
 }

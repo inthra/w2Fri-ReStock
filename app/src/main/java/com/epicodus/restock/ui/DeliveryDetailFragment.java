@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.restock.R;
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.models.Foodtruck;
 
 import org.parceler.Parcels;
 
@@ -25,9 +25,9 @@ public class DeliveryDetailFragment extends Fragment implements View.OnClickList
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
 
-    private Foodcart mFoodcart;
+    private Foodtruck mFoodcart;
 
-    public static DeliveryDetailFragment newInstance(Foodcart foodcart) {
+    public static DeliveryDetailFragment newInstance(Foodtruck foodcart) {
         DeliveryDetailFragment deliveryDetailFragment = new DeliveryDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("foodcart", Parcels.wrap(foodcart));

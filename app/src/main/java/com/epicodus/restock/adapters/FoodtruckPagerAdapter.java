@@ -4,15 +4,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.models.Foodtruck;
 import com.epicodus.restock.ui.DeliveryDetailFragment;
 
 import java.util.ArrayList;
 
-public class FoodcartPagerAdapter extends FragmentPagerAdapter {
-    private ArrayList<Foodcart> mFoodcarts;
+public class FoodtruckPagerAdapter extends FragmentPagerAdapter {
+    private ArrayList<Foodtruck> mFoodcarts;
 
-    public FoodcartPagerAdapter(FragmentManager fm, ArrayList<Foodcart> foodcarts) {
+    public FoodtruckPagerAdapter(FragmentManager fm, ArrayList<Foodtruck> foodcarts) {
         super(fm);
         mFoodcarts = foodcarts;
     }

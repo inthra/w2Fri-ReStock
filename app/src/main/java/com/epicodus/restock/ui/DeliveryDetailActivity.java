@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.epicodus.restock.R;
-import com.epicodus.restock.adapters.FoodcartPagerAdapter;
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.adapters.FoodtruckPagerAdapter;
+import com.epicodus.restock.models.Foodtruck;
 
 import org.parceler.Parcels;
 
@@ -17,8 +17,8 @@ import butterknife.ButterKnife;
 
 public class DeliveryDetailActivity extends AppCompatActivity {
     @Bind(R.id.viewPager) ViewPager mViewPager;
-    private FoodcartPagerAdapter adapterViewPager;
-    ArrayList<Foodcart> mFoodcarts = new ArrayList<>();
+    private FoodtruckPagerAdapter adapterViewPager;
+    ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class DeliveryDetailActivity extends AppCompatActivity {
         mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra("foodcarts"));
         int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
 
-        adapterViewPager = new FoodcartPagerAdapter(getSupportFragmentManager(), mFoodcarts);
+        adapterViewPager = new FoodtruckPagerAdapter(getSupportFragmentManager(), mFoodcarts);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
     }

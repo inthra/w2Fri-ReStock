@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.epicodus.restock.R;
 import com.epicodus.restock.adapters.WantedListAdapter;
-import com.epicodus.restock.models.Foodcart;
+import com.epicodus.restock.models.Foodtruck;
 import com.epicodus.restock.services.YelpService;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class DeliveryListActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private WantedListAdapter mAdapter;
 
-    public ArrayList<Foodcart> mFoodcarts = new ArrayList<>();
+    public ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
