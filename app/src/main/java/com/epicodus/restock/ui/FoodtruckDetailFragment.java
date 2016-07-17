@@ -19,7 +19,7 @@ import org.parceler.Parcels;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DeliveryDetailFragment extends Fragment implements View.OnClickListener {
+public class FoodtruckDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.itemImageView) ImageView mImageLabel;
     @Bind(R.id.foodcartNameTextView) TextView mNameLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
@@ -27,8 +27,8 @@ public class DeliveryDetailFragment extends Fragment implements View.OnClickList
 
     private Foodtruck mFoodcart;
 
-    public static DeliveryDetailFragment newInstance(Foodtruck foodcart) {
-        DeliveryDetailFragment deliveryDetailFragment = new DeliveryDetailFragment();
+    public static FoodtruckDetailFragment newInstance(Foodtruck foodcart) {
+        FoodtruckDetailFragment deliveryDetailFragment = new FoodtruckDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("foodcart", Parcels.wrap(foodcart));
         deliveryDetailFragment.setArguments(args);
@@ -43,7 +43,7 @@ public class DeliveryDetailFragment extends Fragment implements View.OnClickList
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_delivery_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_foodtruck_detail, container, false);
         ButterKnife.bind(this, view);
 
         mNameLabel.setText(mFoodcart.getName());

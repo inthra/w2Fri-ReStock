@@ -19,8 +19,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DeliveryListActivity extends AppCompatActivity {
-    public static final String TAG = DeliveryListActivity.class.getSimpleName();
+public class FoodtruckListActivity extends AppCompatActivity {
+    public static final String TAG = FoodtruckListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private WantedListAdapter mAdapter;
@@ -30,7 +30,7 @@ public class DeliveryListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery);
+        setContentView(R.layout.activity_foodtruck);
         ButterKnife.bind(this);
 
         String location = "portland";
@@ -51,12 +51,12 @@ public class DeliveryListActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 mFoodcarts = yelpService.processResults(response);
 
-                DeliveryListActivity.this.runOnUiThread(new Runnable() {
+                FoodtruckListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mAdapter = new WantedListAdapter(getApplicationContext(), mFoodcarts);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DeliveryListActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FoodtruckListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }

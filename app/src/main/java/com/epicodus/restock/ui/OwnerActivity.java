@@ -12,7 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class OwnerActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.addFoodtrucksButton) Button mAddFoodtrucksButton;
+    @Bind(R.id.addFoodtrucksButton) Button mAddFoodtruckButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +20,13 @@ public class OwnerActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_owner);
         ButterKnife.bind(this);
 
-        mAddFoodtrucksButton.setOnClickListener(this);
+        mAddFoodtruckButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == mAddFoodtrucksButton) {
-            Intent intent = new Intent(OwnerActivity.this, DeliveryListActivity.class);
+        if (view == mAddFoodtruckButton) {
+            Intent intent = new Intent(OwnerActivity.this, FoodtruckListActivity.class);
             startActivity(intent);
         }
     }

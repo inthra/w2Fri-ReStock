@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class DeliveryDetailActivity extends AppCompatActivity {
+public class FoodtruckDetailActivity extends AppCompatActivity {
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private FoodtruckPagerAdapter adapterViewPager;
     ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
@@ -23,7 +23,7 @@ public class DeliveryDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery_detail);
+        setContentView(R.layout.activity_foodtruck_detail);
         ButterKnife.bind(this);
 
         mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra("foodcarts"));

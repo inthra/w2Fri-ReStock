@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.epicodus.restock.R;
 import com.epicodus.restock.models.Foodtruck;
-import com.epicodus.restock.ui.DeliveryDetailActivity;
+import com.epicodus.restock.ui.FoodtruckDetailActivity;
 
 import org.parceler.Parcels;
 
@@ -72,7 +72,7 @@ public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.Wa
         @Override
         public void onClick(View v) {
             int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext, DeliveryDetailActivity.class);
+            Intent intent = new Intent(mContext, FoodtruckDetailActivity.class);
             intent.putExtra("position", itemPosition + "");
             intent.putExtra("foodcarts", Parcels.wrap(mFoodcarts));
             mContext.startActivity(intent);

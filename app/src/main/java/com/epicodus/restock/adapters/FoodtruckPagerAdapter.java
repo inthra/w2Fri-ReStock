@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.epicodus.restock.models.Foodtruck;
-import com.epicodus.restock.ui.DeliveryDetailFragment;
+import com.epicodus.restock.ui.FoodtruckDetailFragment;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class FoodtruckPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return DeliveryDetailFragment.newInstance(mFoodcarts.get(position));
+        return FoodtruckDetailFragment.newInstance(mFoodcarts.get(position));
     }
 
     @Override
