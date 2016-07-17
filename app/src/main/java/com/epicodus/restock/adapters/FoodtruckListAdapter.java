@@ -22,25 +22,25 @@ import java.util.Random;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class WantedListAdapter extends RecyclerView.Adapter<WantedListAdapter.WantedViewHolder> {
+public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdapter.WantedViewHolder> {
     private ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
     private Context mContext;
 
-    public WantedListAdapter(Context context, ArrayList<Foodtruck> foodcarts) {
+    public FoodtruckListAdapter(Context context, ArrayList<Foodtruck> foodcarts) {
         mContext = context;
         mFoodcarts = foodcarts;
     }
 
     @Override
-    public WantedListAdapter.WantedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wanted_list_item, parent, false);
+    public FoodtruckListAdapter.WantedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.foodtruck_list_item, parent, false);
         WantedViewHolder viewHolder = new WantedViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(WantedListAdapter.WantedViewHolder holder, int position) {
+    public void onBindViewHolder(FoodtruckListAdapter.WantedViewHolder holder, int position) {
         holder.bindFoodcart(mFoodcarts.get(position));
     }
 

@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.epicodus.restock.R;
-import com.epicodus.restock.adapters.WantedListAdapter;
+import com.epicodus.restock.adapters.FoodtruckListAdapter;
 import com.epicodus.restock.models.Foodtruck;
 import com.epicodus.restock.services.YelpService;
 
@@ -23,7 +23,7 @@ public class FoodtruckListActivity extends AppCompatActivity {
     public static final String TAG = FoodtruckListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    private WantedListAdapter mAdapter;
+    private FoodtruckListAdapter mAdapter;
 
     public ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class FoodtruckListActivity extends AppCompatActivity {
                 FoodtruckListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mAdapter = new WantedListAdapter(getApplicationContext(), mFoodcarts);
+                        mAdapter = new FoodtruckListAdapter(getApplicationContext(), mFoodcarts);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FoodtruckListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);

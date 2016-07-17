@@ -15,15 +15,12 @@
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.RolesActivity" />
-        <activity
-            android:name=".ui.FoodtruckListActivity"
-            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".ui.FoodtruckListActivity" />
         <activity android:name=".ui.FoodtruckDetailActivity" />
         <activity android:name=".ui.ItemListActivity" />
         <activity android:name=".ui.OwnerActivity"></activity>

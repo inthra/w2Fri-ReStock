@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:padding="15dp"
     tools:context=".ui.FoodtruckListActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Food Truck List"
+        android:text="Select your food truck to add on the account"
         android:id="@+id/headerTextView"
+        android:textSize="18sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="15dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
