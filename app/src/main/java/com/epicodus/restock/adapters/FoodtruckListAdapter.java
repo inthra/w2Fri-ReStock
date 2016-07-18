@@ -74,7 +74,7 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, FoodtruckDetailActivity.class);
             intent.putExtra("position", itemPosition + "");
-            intent.putExtra("foodcarts", Parcels.wrap(mFoodcarts));
+            intent.putExtra("foodtrucks", Parcels.wrap(mFoodcarts));
             mContext.startActivity(intent);
         }
 

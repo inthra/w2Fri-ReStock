@@ -26,7 +26,7 @@ public class FoodtruckDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_foodtruck_detail);
         ButterKnife.bind(this);
 
-        mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra("foodcarts"));
+        mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra("foodtrucks"));
         int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
 
         adapterViewPager = new FoodtruckPagerAdapter(getSupportFragmentManager(), mFoodcarts);
