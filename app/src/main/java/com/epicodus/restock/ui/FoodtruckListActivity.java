@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.epicodus.restock.Constants;
 import com.epicodus.restock.R;
 import com.epicodus.restock.adapters.FoodtruckListAdapter;
 import com.epicodus.restock.models.Foodtruck;
@@ -33,9 +34,7 @@ public class FoodtruckListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_foodtruck);
         ButterKnife.bind(this);
 
-        String location = "portland";
-
-        getFoodcarts(location);
+        getFoodcarts(Constants.LOCATION_FIX);
     }
 
     private void getFoodcarts(String location) {

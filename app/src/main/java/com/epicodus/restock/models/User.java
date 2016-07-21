@@ -1,13 +1,17 @@
 package com.epicodus.restock.models;
 
+import org.parceler.Parcel;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class User {
     String username;
     String email;
     String firstname;
     String lastname;
-    List<String> foodtruckId;
+    List<String> foodtruckIds = new ArrayList<>();
 
     public User() {}
 
@@ -35,6 +39,10 @@ public class User {
     }
 
     public List<String> getFoodtruckId() {
-        return foodtruckId;
+        return foodtruckIds;
+    }
+
+    public void setFoodtruckId(String pushId) {
+        this.foodtruckIds.add(pushId);
     }
 }

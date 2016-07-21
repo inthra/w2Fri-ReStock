@@ -9,17 +9,15 @@ import java.util.List;
 public class Foodtruck {
     String name;
     String phone;
-    String website;
     List<String> address = new ArrayList<>();
     double latitude;
     double longitude;
 
     public Foodtruck() {}
 
-    public Foodtruck(String name, String phone, String website, ArrayList<String> address, double latitude, double longitude) {
+    public Foodtruck(String name, String phone, ArrayList<String> address, double latitude, double longitude) {
         this.name = name;
         this.phone = phone;
-        this.website = website;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -31,10 +29,6 @@ public class Foodtruck {
 
     public String getPhone() {
         return phone;
-    }
-
-    public String getWebsite() {
-        return website;
     }
 
     public List<String> getAddress() {

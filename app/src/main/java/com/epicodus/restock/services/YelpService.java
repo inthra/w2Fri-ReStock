@@ -1,5 +1,7 @@
 package com.epicodus.restock.services;
 
+import android.util.Log;
+
 import com.epicodus.restock.Constants;
 import com.epicodus.restock.models.Foodtruck;
 
@@ -52,20 +54,16 @@ public class YelpService {
                     JSONObject foodcartJSON = businessesJSON.getJSONObject(i);
                     String name = foodcartJSON.getString("name");
                     String phone = foodcartJSON.optString("display_phone", "Phone not available");
-                    String website = foodcartJSON.getString("url");
-                    double latitude = foodcartJSON.getJSONObject("location")
-                            .getJSONObject("coordinate").getDouble("latitude");
-                    double longitude = foodcartJSON.getJSONObject("location")
-                            .getJSONObject("coordinate").getDouble("longitude");
-
+                    double latitude = foodcartJSON.getJSONObject("location").getJSONObject("coordinate").getDouble("latitude");
+                    double longitude = foodcartJSON.getJSONObject("location").getJSONObject("coordinate").getDouble("longitude");
                     ArrayList<String> address = new ArrayList<>();
-                    JSONArray addressJSON = foodcartJSON.getJSONObject("location")
-                            .getJSONArray("display_address");
+                    JSONArray addressJSON = foodcartJSON.getJSONObject("location").getJSONArray("display_address");
+
                     for (int y = 0; y < addressJSON.length(); y++) {
                         address.add(addressJSON.get(y).toString());
                     }
 
-                    Foodtruck restaurant = new Foodtruck(name, phone, website, address, latitude, longitude);
+                    Foodtruck restaurant = new Foodtruck(name, phone, address, latitude, longitude);
                     foodcarts.add(restaurant);
                 }
             }
