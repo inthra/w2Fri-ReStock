@@ -21,7 +21,6 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class FoodtruckListActivity extends AppCompatActivity {
-    public static final String TAG = FoodtruckListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private FoodtruckListAdapter mAdapter;
@@ -33,6 +32,8 @@ public class FoodtruckListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodtruck);
         ButterKnife.bind(this);
+
+        getSupportActionBar().setTitle("back to your food truck");
 
         getFoodcarts(Constants.LOCATION_FIX);
     }

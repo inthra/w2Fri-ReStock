@@ -1,14 +1,15 @@
 # Independent Project: ReStock
 
-#### An app offers service for restocking food truck in Portland area, July 8, 2016
+#### An app offers service for restocking food truck in Portland area, July 22, 2016
 
 #### By _Inthrayuth Mahaphol_
 
 ## Description
 
-An app offers service for restocking food truck in Portland area. Currently, the app is plan to design for users who want to be an independent restocking client. Once users log-in, they can navigate list of wanted items of food truck owners.
+An app offers service for restocking food truck in Portland area. Currently, the app is designed for users who want to be an independent restocking client. Once users log-in, they can navigate list of wanted items of food truck owners.
 
-* Currently, this version is the basic user interface with hard-code information. The API and dynamic information have been added in these version.
+* Yelp API with keyword "food+cart" and location "portland"
+* Authenticate Log-In and Users profile can be saved in the firebase database.
 
 ## Installation
 

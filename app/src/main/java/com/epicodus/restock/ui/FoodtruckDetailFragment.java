@@ -67,5 +67,4 @@ public class FoodtruckDetailFragment extends Fragment implements View.OnClickLis
             startActivity(mapIntent);
         }
     }
-
 }

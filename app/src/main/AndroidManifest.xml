@@ -20,10 +20,28 @@
         </activity>
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.RolesActivity" />
-        <activity android:name=".ui.FoodtruckListActivity" />
-        <activity android:name=".ui.FoodtruckDetailActivity" />
+        <activity
+            android:name=".ui.FoodtruckListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.restock.ui.OwnerActivity">
+            </meta-data>
+        </activity>
+        <activity
+            android:name=".ui.FoodtruckDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.restock.ui.FoodtruckListActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".ui.ItemListActivity" />
-        <activity android:name=".ui.OwnerActivity"></activity>
+        <activity
+            android:name=".ui.OwnerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.restock.ui.RolesActivity">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>

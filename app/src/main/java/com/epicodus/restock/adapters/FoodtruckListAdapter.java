@@ -22,7 +22,7 @@ import java.util.Random;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdapter.WantedViewHolder> {
+public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdapter.FoodtruckViewHolder> {
     private ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
     private Context mContext;
 
@@ -32,15 +32,15 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
     }
 
     @Override
-    public FoodtruckListAdapter.WantedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FoodtruckListAdapter.FoodtruckViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.foodtruck_list_item, parent, false);
-        WantedViewHolder viewHolder = new WantedViewHolder(view);
+        FoodtruckViewHolder viewHolder = new FoodtruckViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(FoodtruckListAdapter.WantedViewHolder holder, int position) {
+    public void onBindViewHolder(FoodtruckListAdapter.FoodtruckViewHolder holder, int position) {
         holder.bindFoodcart(mFoodcarts.get(position));
     }
 
@@ -49,13 +49,14 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
         return mFoodcarts.size();
     }
 
-    public class WantedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class FoodtruckViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.nameTextView) TextView mNameTextView;
         @Bind(R.id.itemImageView) ImageView mItemImageView;
 
-        public WantedViewHolder(View itemView) {
+        public FoodtruckViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
         }
@@ -77,7 +78,5 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
             intent.putExtra("foodtrucks", Parcels.wrap(mFoodcarts));
             mContext.startActivity(intent);
         }
-
-
     }
 }

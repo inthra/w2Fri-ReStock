@@ -1,7 +1,5 @@
 package com.epicodus.restock.services;
 
-import android.util.Log;
-
 import com.epicodus.restock.Constants;
 import com.epicodus.restock.models.Foodtruck;
 

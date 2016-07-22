@@ -20,6 +20,8 @@ public class OwnerActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_owner);
         ButterKnife.bind(this);
 
+        getSupportActionBar().setTitle("back to main menu");
+
         mAddFoodtruckButton.setOnClickListener(this);
     }
 
