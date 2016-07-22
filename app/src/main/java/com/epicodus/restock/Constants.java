@@ -11,4 +11,10 @@ public class Constants {
 
     public static final String LOCATION_FIX = "portland";
 
+    public static final String FIREBASE_CHILD_USERS = "users";
+    public static final String FIREBASE_CHILD_FOODTRUCKS = "foodtrucks";
+    public static final String FIREBASE_CHILD_IEMS = "items";
+
+    public static final String PARCEL_FOODTRUCKS = "foodtrucks";
+
 }

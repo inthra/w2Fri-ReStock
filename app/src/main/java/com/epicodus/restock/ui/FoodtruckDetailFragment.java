@@ -8,11 +8,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.epicodus.restock.Constants;
 import com.epicodus.restock.R;
 import com.epicodus.restock.models.Foodtruck;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -24,21 +29,22 @@ public class FoodtruckDetailFragment extends Fragment implements View.OnClickLis
     @Bind(R.id.foodtruckNameTextView) TextView mNameLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
+    @Bind(R.id.saveFoodtruckButton) Button mSaveFoodtruckButton;
 
     private Foodtruck mFoodtruck;
 
     public static FoodtruckDetailFragment newInstance(Foodtruck foodtruck) {
-        FoodtruckDetailFragment deliveryDetailFragment = new FoodtruckDetailFragment();
+        FoodtruckDetailFragment foodtruckDetailFragment = new FoodtruckDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("foodtrucks", Parcels.wrap(foodtruck));
-        deliveryDetailFragment.setArguments(args);
-        return deliveryDetailFragment;
+        args.putParcelable(Constants.PARCEL_FOODTRUCKS, Parcels.wrap(foodtruck));
+        foodtruckDetailFragment.setArguments(args);
+        return foodtruckDetailFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mFoodtruck = Parcels.unwrap(getArguments().getParcelable("foodtrucks"));
+        mFoodtruck = Parcels.unwrap(getArguments().getParcelable(Constants.PARCEL_FOODTRUCKS));
     }
 
     @Override
@@ -52,6 +58,7 @@ public class FoodtruckDetailFragment extends Fragment implements View.OnClickLis
 
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
+        mSaveFoodtruckButton.setOnClickListener(this);
 
         return view;
     }
@@ -65,6 +72,12 @@ public class FoodtruckDetailFragment extends Fragment implements View.OnClickLis
         if (v == mAddressLabel) {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:" + mFoodtruck.getLatitude() + "," + mFoodtruck.getLongitude() + "?q=(" + mFoodtruck.getName() + ")"));
             startActivity(mapIntent);
+        }
+
+        if (v == mSaveFoodtruckButton) {
+            DatabaseReference foodtruckRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_FOODTRUCKS);
+            foodtruckRef.push().setValue(mFoodtruck);
+            Toast.makeText(getContext(), "Foodtruck saved to your account", Toast.LENGTH_SHORT).show();
         }
     }
 }

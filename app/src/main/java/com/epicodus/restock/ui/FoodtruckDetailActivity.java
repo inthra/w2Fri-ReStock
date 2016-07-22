@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.epicodus.restock.Constants;
 import com.epicodus.restock.R;
 import com.epicodus.restock.adapters.FoodtruckPagerAdapter;
 import com.epicodus.restock.models.Foodtruck;
@@ -28,7 +29,7 @@ public class FoodtruckDetailActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("back to food truck list");
 
-        mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra("foodtrucks"));
+        mFoodcarts = Parcels.unwrap(getIntent().getParcelableExtra(Constants.PARCEL_FOODTRUCKS));
         int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
 
         adapterViewPager = new FoodtruckPagerAdapter(getSupportFragmentManager(), mFoodcarts);
