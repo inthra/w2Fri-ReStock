@@ -11,7 +11,8 @@ public class User {
     String email;
     String firstname;
     String lastname;
-    List<String> foodtruckIds = new ArrayList<>();
+    String foodtruckId;
+    String itemId;
 
     public User() {}
 
@@ -38,11 +39,11 @@ public class User {
         return email;
     }
 
-    public List<String> getFoodtruckId() {
-        return foodtruckIds;
+    public String getFoodtruckId() {
+        return foodtruckId;
     }
 
-    public void setFoodtruckId(String pushId) {
-        this.foodtruckIds.add(pushId);
+    public String getItemId() {
+        return itemId;
     }
 }

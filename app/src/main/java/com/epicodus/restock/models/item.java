@@ -10,7 +10,7 @@ public class item {
     String name;
     int quantity;
     String unit;
-    List<String> foodtruckIds = new ArrayList<>();
+    private String pushId;
 
     public item() {}
 
@@ -32,11 +32,11 @@ public class item {
         return unit;
     }
 
-    public List<String> getFoodtruckId() {
-        return foodtruckIds;
+    public String getPushId() {
+        return pushId;
     }
 
-    public void setFoodtruckId(String pushId) {
-        this.foodtruckIds.add(pushId);
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

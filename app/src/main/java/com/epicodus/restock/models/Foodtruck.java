@@ -12,6 +12,7 @@ public class Foodtruck {
     List<String> address = new ArrayList<>();
     double latitude;
     double longitude;
+    private String pushId;
 
     public Foodtruck() {}
 
@@ -41,5 +42,13 @@ public class Foodtruck {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
