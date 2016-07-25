@@ -12,7 +12,6 @@ public class User {
     String firstname;
     String lastname;
     String foodtruckId;
-    String itemId;
 
     public User() {}
 
@@ -41,9 +40,5 @@ public class User {
 
     public String getFoodtruckId() {
         return foodtruckId;
-    }
-
-    public String getItemId() {
-        return itemId;
     }
 }

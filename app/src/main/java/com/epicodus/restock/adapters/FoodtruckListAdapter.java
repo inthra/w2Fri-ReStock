@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.epicodus.restock.Constants;
 import com.epicodus.restock.R;
 import com.epicodus.restock.models.Foodtruck;
 import com.epicodus.restock.ui.FoodtruckDetailActivity;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -23,12 +25,15 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdapter.FoodtruckViewHolder> {
-    private ArrayList<Foodtruck> mFoodcarts = new ArrayList<>();
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 400;
+
+    private ArrayList<Foodtruck> mFoodtrucks = new ArrayList<>();
     private Context mContext;
 
     public FoodtruckListAdapter(Context context, ArrayList<Foodtruck> foodcarts) {
         mContext = context;
-        mFoodcarts = foodcarts;
+        mFoodtrucks = foodcarts;
     }
 
     @Override
@@ -41,17 +46,17 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
 
     @Override
     public void onBindViewHolder(FoodtruckListAdapter.FoodtruckViewHolder holder, int position) {
-        holder.bindFoodcart(mFoodcarts.get(position));
+        holder.bindFoodtruck(mFoodtrucks.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mFoodcarts.size();
+        return mFoodtrucks.size();
     }
 
     public class FoodtruckViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @Bind(R.id.foodtruckImageView) ImageView mFoodtruckImageView;
         @Bind(R.id.nameTextView) TextView mNameTextView;
-        @Bind(R.id.itemImageView) ImageView mItemImageView;
 
         public FoodtruckViewHolder(View itemView) {
             super(itemView);
@@ -61,13 +66,14 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
             itemView.setOnClickListener(this);
         }
 
-        public void bindFoodcart(Foodtruck foodcart) {
-            mNameTextView.setText(foodcart.getName());
-            TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
-            Random rand = new Random();
-            int rndInt = rand.nextInt(imgs.length());
-            int resID = imgs.getResourceId(rndInt, 0);
-            mItemImageView.setImageResource(resID);
+        public void bindFoodtruck(Foodtruck foodtruck) {
+            Picasso.with(mContext)
+                    .load(foodtruck.getImageUrl())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mFoodtruckImageView);
+
+            mNameTextView.setText(foodtruck.getName());
         }
 
         @Override
@@ -75,7 +81,7 @@ public class FoodtruckListAdapter extends RecyclerView.Adapter<FoodtruckListAdap
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, FoodtruckDetailActivity.class);
             intent.putExtra("position", itemPosition + "");
-            intent.putExtra("foodtrucks", Parcels.wrap(mFoodcarts));
+            intent.putExtra(Constants.PARCEL_FOODTRUCKS, Parcels.wrap(mFoodtrucks));
             mContext.startActivity(intent);
         }
     }

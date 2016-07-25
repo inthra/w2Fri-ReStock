@@ -12,16 +12,18 @@ public class Foodtruck {
     List<String> address = new ArrayList<>();
     double latitude;
     double longitude;
+    String imageUrl;
     private String pushId;
 
     public Foodtruck() {}
 
-    public Foodtruck(String name, String phone, ArrayList<String> address, double latitude, double longitude) {
+    public Foodtruck(String name, String phone, ArrayList<String> address, double latitude, double longitude, String imageUrl) {
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.imageUrl = getLargeImageUrl(imageUrl);
     }
 
     public String getName() {
@@ -42,6 +44,15 @@ public class Foodtruck {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getLargeImageUrl(String imageUrl) {
+        String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
     }
 
     public String getPushId() {

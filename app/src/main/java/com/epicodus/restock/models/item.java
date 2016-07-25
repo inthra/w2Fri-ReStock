@@ -11,6 +11,7 @@ public class item {
     int quantity;
     String unit;
     private String pushId;
+    String foodtruckId;
 
     public item() {}
 
@@ -38,5 +39,9 @@ public class item {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getFoodtruckId() {
+        return foodtruckId;
     }
 }

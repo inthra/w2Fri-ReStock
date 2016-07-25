@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select your food truck to add on the account"
+        android:text="Select your food truck to add in the account"
         android:id="@+id/headerTextView"
         android:textSize="18sp"
         android:layout_alignParentTop="true"

@@ -54,6 +54,8 @@ public class YelpService {
                     String phone = foodcartJSON.optString("display_phone", "Phone not available");
                     double latitude = foodcartJSON.getJSONObject("location").getJSONObject("coordinate").getDouble("latitude");
                     double longitude = foodcartJSON.getJSONObject("location").getJSONObject("coordinate").getDouble("longitude");
+                    String imageUrl = foodcartJSON.getString("image_url");
+
                     ArrayList<String> address = new ArrayList<>();
                     JSONArray addressJSON = foodcartJSON.getJSONObject("location").getJSONArray("display_address");
 
@@ -61,7 +63,7 @@ public class YelpService {
                         address.add(addressJSON.get(y).toString());
                     }
 
-                    Foodtruck restaurant = new Foodtruck(name, phone, address, latitude, longitude);
+                    Foodtruck restaurant = new Foodtruck(name, phone, address, latitude, longitude, imageUrl);
                     foodcarts.add(restaurant);
                 }
             }
